@@ -1,4 +1,4 @@
 #zh strings go here for Rails i18n
-zh:
+en:
   label_address_books: "AddressBooks"
   label_my_address: " My Address"

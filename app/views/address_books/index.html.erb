@@ -8,7 +8,7 @@
   <%= sort_header_tag('login', :caption => l(:field_login)) %>
   <%= sort_header_tag('mail', :caption => l(:field_mail)) %>
   <%User.current.visible_custom_field_values.each do |custom_value| %>
-  <%=sort_header_tag h(custom_value.custom_field.name)  if Setting.plugin_address_books['ADDRESS_BOOKS_FIELD'].include? custom_value.custom_field.id.to_s %>
+  <%=sort_header_tag h(custom_value.custom_field.name)  if (Setting.plugin_address_books['ADDRESS_BOOKS_FIELD'] || []).include? custom_value.custom_field.id.to_s %>
   <% end %>
   </tr>
 </thead>
@@ -20,7 +20,7 @@
   <td class="email"><%= mail_to(h(user.mail)) %></td>
    
  <% user.visible_custom_field_values.each do |custom_value| %>
- <%if Setting.plugin_address_books['ADDRESS_BOOKS_FIELD'].include? custom_value.custom_field.id.to_s%>
+ <%if (Setting.plugin_address_books['ADDRESS_BOOKS_FIELD'] || []).include? custom_value.custom_field.id.to_s%>
   <td align="center">
 	<%=h show_value(custom_value)  %>
   </td>

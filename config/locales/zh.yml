@@ -1,0 +1,3 @@
+#zh strings go here for Rails i18n
+zh:
+  label_address_books: "通讯录"

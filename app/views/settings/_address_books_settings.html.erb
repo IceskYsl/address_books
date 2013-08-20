@@ -1,0 +1,15 @@
+<p>
+  <label>通讯录显示字段</label>
+	<br />
+	<% User.current.visible_custom_field_values.each do |custom_value| %>
+	<% show = settings['ADDRESS_BOOKS_FIELD'].include? (custom_value.custom_field.id.to_s)%>
+ 		  <%=check_box_tag 'settings[ADDRESS_BOOKS_FIELD][]', h(custom_value.custom_field.id), show %><%=h(custom_value.custom_field.name)%> <br />
+ 	<% end %>
+  <br />
+  <em>请选择需要在通讯录中显示的定制字段信息.</em>
+</p>
+
+
+ 
+
+ 

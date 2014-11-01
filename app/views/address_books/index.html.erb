@@ -20,7 +20,7 @@
   <tbody>
 <% for user in @users -%>
   <tr class="<%= user.css_classes %> <%= cycle("odd", "even") %>">
-  <td class="username"><%= avatar(user, :size => "14") %><%= link_to h( user.lastname + user.firstname), user_path(user) %></td>
+  <td class="username"><%= avatar(user, :size => "14") %><%= link_to h( user.name), user_path(user) %></td>
   <td class="email"><%= mail_to(h(user.mail)) %></td>
    
  <% user.visible_custom_field_values.each do |custom_value| %>
